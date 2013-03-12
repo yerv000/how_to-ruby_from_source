@@ -1,3 +1,6 @@
+# Draft in progress - Do not use
+
+
 How to install Ruby into a local directory under a user's $HOME directory
 =========================================================================
 
