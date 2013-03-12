@@ -38,18 +38,16 @@ The following approach is more flexible and adds seperation of space.
 - Create a local directory to hold all locally installed programs (Ruby, Node, etc):
 
 ~~~ sh
-$ mkdir local
+$ mkdir ~/local
 ~~~
 
 - Create a `ruby` subdirectory to hold the Ruby installation:
 
 ~~~ sh
-$ cd local
-
-$ mkdir ruby
+$ mkdir ~/local/ruby
 ~~~
 
-- Add the Ruby binary to the search path. Edit the `.profile` file present in the user's home directory and add the following line at the end:
+- Add the Ruby binary to the search path. Edit the `.profile` file present in the user's home directory and append the following line:
 
 ~~~
 PATH=$HOME/local/ruby/bin:$PATH
@@ -62,35 +60,36 @@ PATH=$HOME/local/ruby/bin:$PATH
 
 - Create a directory to hold source codes:
 
-cd ~
-
-mkdir src
+~~~ sh
+mkdir ~/src
+~~~
 
 - Clone the Ruby repository under the 'src' directory:
 
+~~~ sh
 cd src
-
 git clone https://github.com/ruby/ruby.git
-
+~~~
 
 ## Create shell script to build and install Ruby
 
 - Create a file called 'build_ruby.sh' in the 'src' directory using the following commands:
 
+~~~ sh
 cd ~/src
-
 touch build_ruby.sh
-
 chmod +x build_ruby.sh
+~~~
 
 - Copy and paste the following content to 'build_ruby.sh' using your preferred editor:
 
+```sh
 cd ruby
 autoconf
 ./configure --prefix=$HOME/local/ruby --enable-shared
 make
 make install
-
+```
 
 ## List available tags and checkout version to build
 
