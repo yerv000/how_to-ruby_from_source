@@ -28,7 +28,9 @@ Ruby to build Ruby
 
 Building Ruby from source requires an already installed Ruby version. Install the package manager's Ruby version with:
 
-sudo apt-get install ruby
+~~~ sh
+$ sudo apt-get install ruby
+~~~
 
 Create installation directory and add to PATH
 ---------------------------------------------
@@ -39,13 +41,17 @@ The following approach is more flexible and adds seperation of space.
 
 - Create a local directory to hold all locally installed programs (Ruby, Node, etc):
 
-mkdir local
+~~~ sh
+$ mkdir local
+~~~
 
 - Create a 'ruby' subdirectory to hold the Ruby installation:
 
-cd local
+~~~ sh
+$ cd local
 
-mkdir ruby
+$ mkdir ruby
+~~~
 
 - Add the Ruby binary to the search path. Edit the '.profile' file present in the user's home directory and add the following line at the end:
 
