@@ -67,8 +67,8 @@ mkdir ~/src
 - Clone the Ruby repository under the 'src' directory:
 
 ~~~ sh
-cd src
-git clone https://github.com/ruby/ruby.git
+$ cd src
+$ git clone https://github.com/ruby/ruby.git
 ~~~
 
 ## Create shell script to build and install Ruby
@@ -76,12 +76,12 @@ git clone https://github.com/ruby/ruby.git
 - Create a file called 'build_ruby.sh' in the 'src' directory using the following commands:
 
 ~~~ sh
-cd ~/src
-touch build_ruby.sh
-chmod +x build_ruby.sh
+$ cd ~/src
+$ touch build_ruby.sh
+$ chmod +x build_ruby.sh
 ~~~
 
-- Copy and paste the following content to 'build_ruby.sh' using your preferred editor:
+- Copy and paste the following content to `build_ruby.sh` using your preferred editor:
 
 ```sh
 cd ruby
@@ -95,15 +95,21 @@ make install
 
 - Change current directory to Ruby source:
 
-cd ~/src/ruby
+~~~ sh
+$ cd ~/src/ruby
+~~~
 
 - List available tags:
 
-git tag
+~~~ sh
+$ git tag
+~~~
 
 - Tags are version numbers and patch levels. Pick a tag and check it out. Let us pick Ruby 2.0.0:
 
-git checkout v2_0_0_0
+~~~ sh
+$ git checkout v2_0_0_0
+~~~
 
 - Git should state that it is in detached head and list the tag name.
 
@@ -112,37 +118,46 @@ git checkout v2_0_0_0
 
 - Change current directory to 'src':
 
-cd ~/src
+~~~ sh
+$ cd ~/src
+~~~
 
 - Run build script:
 
-./build_ruby.sh
-
+~~~ sh
+$ ./build_ruby.sh
+~~~
 
 ## Verify Ruby installation
 
 - Run the following command:
 
-which ruby
+~~~ sh
+$ which ruby
+~~~
 
 Output should be the user's home directory followed by './local/ruby/bin/ruby'.
 
 - Verify installed Ruby version:
 
-ruby --version
+~~~ sh
+$ ruby --version
+~~~
 
 Output should correspond to the tag version picked, in our example:
 
+~~~
 ruby 2.0.0p0 (2013-02-24 revision 39473) [x86_64-linux]
-
+~~~
 
 ## Deleting Ruby installation
 
 - To completely delete the locally installed Ruby version execute the following:
 
-cd ~/local/ruby
-
-rm -rf *
+~~~ sh
+$ cd ~/local/ruby
+$ rm -rf *
+~~~
 
 - Now you are able to pick a different version and do a clean install.
 
@@ -151,21 +166,25 @@ rm -rf *
 
 - Simply rename the ~/local/ruby directory:
 
-mv ~/local/ruby ~/local/ruby_2_0_0_0
+~~~ sh
+$ mv ~/local/ruby ~/local/ruby_2_0_0_0
+~~~
 
 - Recreate an empty local Ruby directory:
 
-mkdir ~/local/ruby
+~~~ sh
+$ mkdir ~/local/ruby
+~~~
 
 - Now you are ready to checkout a specific tag (e.g. v1_9_3_392) in the ~/src/ruby directory and rerun the build script.
 
 - To return to the 2.0.0p0 version without deleting the just installed 1.9.3p392 version:
 
-mv ~/local/ruby ~/local/ruby1_9_3_392
-
-mv ~/local/ruby2_0_0_0 ~/local/ruby
-
+~~~ sh
+$ mv ~/local/ruby ~/local/ruby1_9_3_392
+$ mv ~/local/ruby2_0_0_0 ~/local/ruby
+~~~
 
 ## Note about gems
 
-Use bundler to manage gems. All gems will be under the '~/local/ruby' directory, so when you rename the directory to switch to a different Ruby version the gems move with the Ruby binaries.
+Use bundler to manage gems. All gems will be under the `~/local/ruby` directory, so when you rename the directory to switch to a different Ruby version the gems move with the Ruby binaries.
