@@ -16,7 +16,7 @@ Build tools and libraries
 
 Install the necessary tools and libraries by running the following command:
 
-    ~~~ sh
+    ~~~sh
     sudo apt-get install build-essential autoconf git libreadline-dev libssl-dev
     ~~~
 
