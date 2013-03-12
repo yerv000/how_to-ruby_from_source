@@ -1,8 +1,7 @@
 # Draft in progress - Do not use
 
 
-How to install Ruby into a local directory under a user's $HOME directory
-=========================================================================
+# How to install Ruby into a local directory under a user's $HOME directory
 
 This how-to is an approach to use to solve the following problems:
 
@@ -14,8 +13,7 @@ The following steps detail an approach to use on a Debian derived distribution (
 
 All commands are performed in the user's home directory unless otherwise stated.
 
-Build tools and libraries
--------------------------
+## Build tools and libraries
 
 Install the necessary tools and libraries by running the following command:
 
@@ -23,8 +21,7 @@ Install the necessary tools and libraries by running the following command:
 $ sudo apt-get install build-essential autoconf git libreadline-dev libssl-dev
 ~~~
 
-Ruby to build Ruby
-------------------
+## Ruby to build Ruby
 
 Building Ruby from source requires an already installed Ruby version. Install the package manager's Ruby version with:
 
@@ -32,8 +29,7 @@ Building Ruby from source requires an already installed Ruby version. Install th
 $ sudo apt-get install ruby
 ~~~
 
-Create installation directory and add to PATH
----------------------------------------------
+## Create installation directory and add to PATH
 
 The popular approach is to install under a 'bin' directory in the user's home directory (e.g. /home/user1/bin). This approach is not recommended as it does not offer seperation of space which comes very useful when switching to a different version of Ruby.
 
@@ -60,8 +56,7 @@ PATH=$HOME/local/ruby/bin:$PATH
 - Log out and log back in for the changes to take effect.
 
 
-Create source directory and clone repository
---------------------------------------------
+## Create source directory and clone repository
 
 - Create a directory to hold source codes:
 
@@ -76,8 +71,7 @@ cd src
 git clone https://github.com/ruby/ruby.git
 
 
-Create shell script to build and install Ruby
----------------------------------------------
+## Create shell script to build and install Ruby
 
 - Create a file called 'build_ruby.sh' in the 'src' directory using the following commands:
 
@@ -96,8 +90,7 @@ make
 make install
 
 
-List available tags and checkout version to build
--------------------------------------------------
+## List available tags and checkout version to build
 
 - Change current directory to Ruby source:
 
@@ -114,8 +107,7 @@ git checkout v2_0_0_0
 - Git should state that it is in detached head and list the tag name.
 
 
-Run build script
-----------------
+## Run build script
 
 - Change current directory to 'src':
 
@@ -126,8 +118,7 @@ cd ~/src
 ./build_ruby.sh
 
 
-Verify Ruby installation
-------------------------
+## Verify Ruby installation
 
 - Run the following command:
 
@@ -144,8 +135,7 @@ Output should correspond to the tag version picked, in our example:
 ruby 2.0.0p0 (2013-02-24 revision 39473) [x86_64-linux]
 
 
-Deleting Ruby installation
---------------------------
+## Deleting Ruby installation
 
 - To completely delete the locally installed Ruby version execute the following:
 
@@ -156,8 +146,7 @@ rm -rf *
 - Now you are able to pick a different version and do a clean install.
 
 
-Maintaining different Ruby versions
------------------------------------
+## Maintaining different Ruby versions
 
 - Simply rename the ~/local/ruby directory:
 
@@ -176,7 +165,6 @@ mv ~/local/ruby ~/local/ruby1_9_3_392
 mv ~/local/ruby2_0_0_0 ~/local/ruby
 
 
-Note about gems
----------------
+## Note about gems
 
 Use bundler to manage gems. All gems will be under the '~/local/ruby' directory, so when you rename the directory to switch to a different Ruby version the gems move with the Ruby binaries.
