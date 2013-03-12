@@ -1,7 +1,7 @@
 # Draft in progress - Do not use
 
 
-# How to install Ruby into a local directory under a user's $HOME directory
+# How to install Ruby into a local directory under a user's home directory
 
 This how-to is an approach to use to solve the following problems:
 
@@ -31,7 +31,7 @@ $ sudo apt-get install ruby
 
 ## Create installation directory and add to PATH
 
-The popular approach is to install under a 'bin' directory in the user's home directory (e.g. /home/user1/bin). This approach is not recommended as it does not offer seperation of space which comes very useful when switching to a different version of Ruby.
+The popular approach is to install under a 'bin' directory in the user's home directory (e.g. `/home/yerv000/bin`). This approach is not recommended as it does not offer seperation of space which comes very useful when switching to a different version of Ruby.
 
 The following approach is more flexible and adds seperation of space.
 
@@ -41,7 +41,7 @@ The following approach is more flexible and adds seperation of space.
 $ mkdir local
 ~~~
 
-- Create a 'ruby' subdirectory to hold the Ruby installation:
+- Create a `ruby` subdirectory to hold the Ruby installation:
 
 ~~~ sh
 $ cd local
@@ -49,9 +49,11 @@ $ cd local
 $ mkdir ruby
 ~~~
 
-- Add the Ruby binary to the search path. Edit the '.profile' file present in the user's home directory and add the following line at the end:
+- Add the Ruby binary to the search path. Edit the `.profile` file present in the user's home directory and add the following line at the end:
 
+~~~
 PATH=$HOME/local/ruby/bin:$PATH
+~~~
 
 - Log out and log back in for the changes to take effect.
 
