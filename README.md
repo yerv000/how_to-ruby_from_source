@@ -11,7 +11,7 @@ This how-to is an approach to use to solve the following problems:
 The following steps detail an approach to use on a Debian derived distributions (Linux Mint, Ubuntu, etc).
 
 
-**All commands are performed while in the user's home directory unless otherwise stated.**
+**All commands are performed from in the user's home directory unless otherwise stated.**
 
 ## Build tools and libraries
 
