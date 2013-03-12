@@ -23,7 +23,7 @@ $ sudo apt-get install build-essential autoconf git libreadline-dev libssl-dev
 
 ## Ruby to build Ruby
 
-Building Ruby from source requires an installed Ruby version. Install the package manager's Ruby version:
+Building Ruby from source requires an installed Ruby version. Install the package manager's version of Ruby:
 
 ~~~ sh
 $ sudo apt-get install ruby
@@ -64,10 +64,10 @@ Create a directory to hold source codes:
 mkdir ~/src
 ~~~
 
-Clone the Ruby repository under the `src` directory:
+Clone the Ruby repository under the `~/src` directory:
 
 ~~~ sh
-$ cd src
+$ cd ~/src
 $ git clone https://github.com/ruby/ruby.git
 ~~~
 
@@ -84,7 +84,7 @@ $ chmod +x build_ruby.sh
 Copy and paste the following content to `build_ruby.sh` using your preferred editor:
 
 ```sh
-cd ruby
+cd ~/src/ruby
 autoconf
 ./configure --prefix=$HOME/local/ruby --enable-shared
 make
@@ -93,7 +93,7 @@ make install
 
 ## List available tags and checkout version to build
 
-Change current directory to Ruby source:
+Change current directory to `~/src/ruby`:
 
 ~~~ sh
 $ cd ~/src/ruby
@@ -105,7 +105,7 @@ List available tags:
 $ git tag
 ~~~
 
-Tags are version numbers and patch levels. Pick a tag and check it out. Let us pick *Ruby 2.0.0*:
+Tags are version numbers and patch levels. Pick a tag and check it out. Let us pick *Ruby 2.0.0p0*:
 
 ~~~ sh
 $ git checkout v2_0_0_0
@@ -136,7 +136,7 @@ Run the following command:
 $ which ruby
 ~~~
 
-Output should be under the user's home directory `~/local/ruby/bin/ruby`.
+Output should point to `~/local/ruby/bin/ruby`.
 
 Verify installed Ruby version:
 
@@ -155,11 +155,10 @@ ruby 2.0.0p0 (2013-02-24 revision 39473) [x86_64-linux]
 To completely delete the locally installed Ruby version execute the following:
 
 ~~~ sh
-$ cd ~/local/ruby
-$ rm -rf *
+$ rm -rf ~/local/ruby/*
 ~~~
 
-Now you are able to pick a different version and do a clean install.
+Now you are able to checkout a different version and do a clean install.
 
 
 ## Maintaining different Ruby versions
