@@ -1,7 +1,7 @@
 # Draft in progress - Do not use
 
 
-# How to do a local installation of Ruby
+# How to install Ruby locally from from source
 
 This how-to is an approach to use to solve the following problems:
 
@@ -35,36 +35,36 @@ The popular approach is to install under a 'bin' directory in the user's home di
 
 The following approach is more flexible and adds seperation of space.
 
-- Create a local directory to hold all locally installed programs (Ruby, Node, etc):
+Create a local directory to hold all locally installed programs (Ruby, Node, etc):
 
 ~~~ sh
 $ mkdir ~/local
 ~~~
 
-- Create a `ruby` subdirectory to hold the Ruby installation:
+Create a `ruby` subdirectory to hold the Ruby installation:
 
 ~~~ sh
 $ mkdir ~/local/ruby
 ~~~
 
-- Add the Ruby binary to the search path. Edit the `.profile` file present in the user's home directory and append the following line:
+Add the Ruby binary to the search path. Edit the `.profile` file present in the user's home directory and append the following line:
 
 ~~~
 PATH=$HOME/local/ruby/bin:$PATH
 ~~~
 
-- Log out and log back in for the changes to take effect.
+Log out and log back in for the changes to take effect.
 
 
 ## Create source directory and clone repository
 
-- Create a directory to hold source codes:
+Create a directory to hold source codes:
 
 ~~~ sh
 mkdir ~/src
 ~~~
 
-- Clone the Ruby repository under the 'src' directory:
+Clone the Ruby repository under the 'src' directory:
 
 ~~~ sh
 $ cd src
@@ -73,7 +73,7 @@ $ git clone https://github.com/ruby/ruby.git
 
 ## Create shell script to build and install Ruby
 
-- Create a file called 'build_ruby.sh' in the 'src' directory using the following commands:
+Create a file called `build_ruby.sh` in the `~/src` directory using the following commands:
 
 ~~~ sh
 $ cd ~/src
@@ -81,7 +81,7 @@ $ touch build_ruby.sh
 $ chmod +x build_ruby.sh
 ~~~
 
-- Copy and paste the following content to `build_ruby.sh` using your preferred editor:
+Copy and paste the following content to `build_ruby.sh` using your preferred editor:
 
 ```sh
 cd ruby
@@ -93,36 +93,36 @@ make install
 
 ## List available tags and checkout version to build
 
-- Change current directory to Ruby source:
+Change current directory to Ruby source:
 
 ~~~ sh
 $ cd ~/src/ruby
 ~~~
 
-- List available tags:
+List available tags:
 
 ~~~ sh
 $ git tag
 ~~~
 
-- Tags are version numbers and patch levels. Pick a tag and check it out. Let us pick Ruby 2.0.0:
+Tags are version numbers and patch levels. Pick a tag and check it out. Let us pick Ruby 2.0.0:
 
 ~~~ sh
 $ git checkout v2_0_0_0
 ~~~
 
-- Git should state that it is in detached head and list the tag name.
+Git should state that it is in detached head and list the tag name.
 
 
 ## Run build script
 
-- Change current directory to 'src':
+Change current directory to 'src':
 
 ~~~ sh
 $ cd ~/src
 ~~~
 
-- Run build script:
+Run build script:
 
 ~~~ sh
 $ ./build_ruby.sh
@@ -130,7 +130,7 @@ $ ./build_ruby.sh
 
 ## Verify Ruby installation
 
-- Run the following command:
+Run the following command:
 
 ~~~ sh
 $ which ruby
@@ -138,7 +138,7 @@ $ which ruby
 
 Output should be the user's home directory followed by './local/ruby/bin/ruby'.
 
-- Verify installed Ruby version:
+Verify installed Ruby version:
 
 ~~~ sh
 $ ruby --version
@@ -152,33 +152,33 @@ ruby 2.0.0p0 (2013-02-24 revision 39473) [x86_64-linux]
 
 ## Deleting Ruby installation
 
-- To completely delete the locally installed Ruby version execute the following:
+To completely delete the locally installed Ruby version execute the following:
 
 ~~~ sh
 $ cd ~/local/ruby
 $ rm -rf *
 ~~~
 
-- Now you are able to pick a different version and do a clean install.
+Now you are able to pick a different version and do a clean install.
 
 
 ## Maintaining different Ruby versions
 
-- Simply rename the ~/local/ruby directory:
+Simply rename the ~/local/ruby directory:
 
 ~~~ sh
 $ mv ~/local/ruby ~/local/ruby_2_0_0_0
 ~~~
 
-- Recreate an empty local Ruby directory:
+Recreate an empty local Ruby directory:
 
 ~~~ sh
 $ mkdir ~/local/ruby
 ~~~
 
-- Now you are ready to checkout a specific tag (e.g. v1_9_3_392) in the ~/src/ruby directory and rerun the build script.
+Now you are ready to checkout a specific tag (e.g. v1_9_3_392) in the ~/src/ruby directory and rerun the build script.
 
-- To return to the 2.0.0p0 version without deleting the just installed 1.9.3p392 version:
+To return to the 2.0.0p0 version without deleting the just installed 1.9.3p392 version:
 
 ~~~ sh
 $ mv ~/local/ruby ~/local/ruby1_9_3_392
