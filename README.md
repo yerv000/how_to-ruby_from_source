@@ -1,7 +1,7 @@
 # Draft in progress - Do not use
 
 
-# How to install Ruby into a local directory under a user's home directory
+# How to do a local installation of Ruby
 
 This how-to is an approach to use to solve the following problems:
 
