@@ -5,7 +5,7 @@
 
 This how-to is an approach to use to solve the following problems:
 
-- Ruby version management tools (RVM, rbenv, etc) add complexity when full usage is not required.
+- Ruby version management tools (RVM, rbenv, etc) add complexity when full features are not required.
 - Ruby versions installed by package managers (apt-get, etc) lag behind the latest stable version.
 
 The following steps detail an approach to use on a Debian derived distributions (Linux Mint, Ubuntu, etc).
