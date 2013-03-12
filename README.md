@@ -8,10 +8,10 @@ This how-to is an approach to use to solve the following problems:
 - Ruby version management tools (RVM, rbenv, etc) add complexity when full usage is not required.
 - Ruby versions installed by package managers (apt-get, etc) lag behind the latest stable version.
 
-The following steps detail an approach to use on a Debian derived distribution (Linux Mint, Ubuntu, etc).
+The following steps detail an approach to use on a Debian derived distributions (Linux Mint, Ubuntu, etc).
 
 
-All commands are performed in the user's home directory unless otherwise stated.
+**All commands are performed while in the user's home directory unless otherwise stated.**
 
 ## Build tools and libraries
 
@@ -31,7 +31,7 @@ $ sudo apt-get install ruby
 
 ## Create installation directory and add to PATH
 
-The popular approach is to install under a 'bin' directory in the user's home directory (e.g. `/home/yerv000/bin`). This approach is not recommended as it does not offer seperation of space which comes very useful when switching to a different version of Ruby.
+The popular approach is to install under a `bin` directory in the user's home directory (e.g. `/home/yerv000/bin`). This approach is not recommended as it does not offer seperation of space which comes very useful when switching to a different version of Ruby.
 
 The following approach is more flexible and adds seperation of space.
 
@@ -64,7 +64,7 @@ Create a directory to hold source codes:
 mkdir ~/src
 ~~~
 
-Clone the Ruby repository under the 'src' directory:
+Clone the Ruby repository under the `src` directory:
 
 ~~~ sh
 $ cd src
@@ -105,7 +105,7 @@ List available tags:
 $ git tag
 ~~~
 
-Tags are version numbers and patch levels. Pick a tag and check it out. Let us pick Ruby 2.0.0:
+Tags are version numbers and patch levels. Pick a tag and check it out. Let us pick *Ruby 2.0.0*:
 
 ~~~ sh
 $ git checkout v2_0_0_0
@@ -116,7 +116,7 @@ Git should state that it is in detached head and list the tag name.
 
 ## Run build script
 
-Change current directory to 'src':
+Change current directory to `~/src`:
 
 ~~~ sh
 $ cd ~/src
@@ -136,7 +136,7 @@ Run the following command:
 $ which ruby
 ~~~
 
-Output should be the user's home directory followed by './local/ruby/bin/ruby'.
+Output should be under the user's home directory `~/local/ruby/bin/ruby`.
 
 Verify installed Ruby version:
 
@@ -176,9 +176,9 @@ Recreate an empty local Ruby directory:
 $ mkdir ~/local/ruby
 ~~~
 
-Now you are ready to checkout a specific tag (e.g. v1_9_3_392) in the ~/src/ruby directory and rerun the build script.
+Now you are ready to checkout a specific tag (e.g. *v1_9_3_392*) in the `~/src/ruby` directory and rerun the build script.
 
-To return to the 2.0.0p0 version without deleting the just installed 1.9.3p392 version:
+To return to the *2.0.0p0* version without deleting the just installed *1.9.3p392* version:
 
 ~~~ sh
 $ mv ~/local/ruby ~/local/ruby1_9_3_392
