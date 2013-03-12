@@ -16,7 +16,9 @@ Build tools and libraries
 
 Install the necessary tools and libraries by running the following command:
 
-sudo apt-get install build-essential autoconf git libreadline-dev libssl-dev
+    ~~~ sh
+    sudo apt-get install build-essential autoconf git libreadline-dev libssl-dev
+    ~~~
 
 Ruby to build Ruby
 ------------------
