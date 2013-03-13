@@ -18,7 +18,7 @@ The following steps detail an approach to use on a Debian derived distributions 
 Install the necessary tools and libraries by running the following command:
 
 ~~~ sh
-$ sudo apt-get install build-essential autoconf git libreadline-dev libssl-dev
+$ sudo apt-get install build-essential autoconf bison git libreadline-dev libssl-dev libyaml-dev libncurses-dev libffi-dev tk-dev libgdbm-dev
 ~~~
 
 ## Ruby to build Ruby
@@ -85,10 +85,12 @@ Copy and paste the following content to `build_ruby.sh` using your preferred edi
 
 ```sh
 cd ~/src/ruby
-autoconf
+autoconf -f
 ./configure --prefix=$HOME/local/ruby --enable-shared
+make clean
 make
 make install
+make clean
 ```
 
 ## List available tags and checkout version to build
