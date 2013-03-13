@@ -56,7 +56,7 @@ $ echo 'PATH=$HOME/local/ruby/bin:$PATH' >> ~/.profile
 Log out and log back in for the changes to take effect.
 
 
-## Create source directory and clone repository
+## Create source directory and clone Ruby repository
 
 Create a directory to hold source codes:
 
