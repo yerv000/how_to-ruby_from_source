@@ -1,6 +1,3 @@
-# Draft in progress - Do not use
-
-
 # How to install Ruby locally from source
 
 This how-to is an approach to use to solve the following problems:
