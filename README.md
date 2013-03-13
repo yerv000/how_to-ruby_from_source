@@ -47,10 +47,10 @@ Create a `ruby` subdirectory to hold the Ruby installation:
 $ mkdir ~/local/ruby
 ~~~
 
-Add the Ruby binary to the search path. Edit the `.profile` file present in the user's home directory and append the following line:
+Add the Ruby binary to the search path. Append the local Ruby path to the `.profile` file present in the user's home directory:
 
-~~~
-PATH=$HOME/local/ruby/bin:$PATH
+~~~ sh
+$ echo 'PATH=$HOME/local/ruby/bin:$PATH' >> ~/.profile
 ~~~
 
 Log out and log back in for the changes to take effect.
