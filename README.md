@@ -185,7 +185,7 @@ $ mv ~/local/ruby2_0_0_195 ~/local/ruby
 
 ## Note about gems
 
-Use bundler to manage gems. All gems will be under the `~/local/ruby` directory, so when you rename the directory to switch to a different Ruby version the gems move with the Ruby binaries.
+Use [Bundler](http://gembundler.com/) to manage gems. All gems will be under the `~/local/ruby` directory, so when you rename the directory to switch to a different Ruby version the gems move with the Ruby binaries.
 
 ## Keeping Ruby repository up-to-date
 
