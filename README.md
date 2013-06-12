@@ -104,10 +104,10 @@ List available tags:
 $ git tag
 ~~~
 
-Tags are version numbers and patch levels. Pick a tag and check it out. Let us pick *Ruby 2.0.0p0*:
+Tags are version numbers and patch levels. Pick a tag and check it out. Let us pick *Ruby 2.0.0p195*:
 
 ~~~ sh
-$ git checkout v2_0_0_0
+$ git checkout v2_0_0_195
 ~~~
 
 Git should state that it is in detached head and list the tag name.
@@ -146,7 +146,7 @@ $ ruby --version
 Output should correspond to the tag version picked, in our example:
 
 ~~~
-ruby 2.0.0p0 (2013-02-24 revision 39473) [x86_64-linux]
+ruby 2.0.0p195 (2013-05-14 revision 40731) [x86_64-linux]
 ~~~
 
 ## Deleting Ruby installation
@@ -165,7 +165,7 @@ Now you are able to checkout a different version and do a clean install.
 Simply rename the ~/local/ruby directory:
 
 ~~~ sh
-$ mv ~/local/ruby ~/local/ruby_2_0_0_0
+$ mv ~/local/ruby ~/local/ruby_2_0_0_195
 ~~~
 
 Recreate an empty local Ruby directory:
@@ -176,11 +176,11 @@ $ mkdir ~/local/ruby
 
 Now you are ready to checkout a specific tag (e.g. *v1_9_3_392*) in the `~/src/ruby` directory and rerun the build script.
 
-To return to the *2.0.0p0* version without deleting the just installed *1.9.3p392* version:
+To return to the *2.0.0p195* version without deleting the just installed *1.9.3p392* version:
 
 ~~~ sh
 $ mv ~/local/ruby ~/local/ruby1_9_3_392
-$ mv ~/local/ruby2_0_0_0 ~/local/ruby
+$ mv ~/local/ruby2_0_0_195 ~/local/ruby
 ~~~
 
 ## Note about gems
