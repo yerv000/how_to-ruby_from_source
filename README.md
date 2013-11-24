@@ -195,4 +195,5 @@ To pull the latest changes run the following:
 $ cd ~/src/ruby
 $ git checkout trunk
 $ git pull
+$ git pull --tags
 ~~~
